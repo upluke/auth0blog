@@ -3,7 +3,7 @@ const jwksRsa = require('jwks-rsa');
 const { domain, audience } = require('../config/env.dev');
 
 const checkJwt = jwt({
-    secret: jwksRsa.expressJwtSecret({
+    secret: jwksRsa.expressJwtSecret({ //json web key set 
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
