@@ -6,7 +6,7 @@ import { Loading } from "../components/index";
 const ProtectedRoute = ({ component, ...args }) => (
   <Route
     component={withAuthenticationRequired(component, {
-      onRedirecting: () => <Loading />,
+      onRedirecting: () => <Loading />, //if the user is logged in in the meantime while it's redirecting it will show a loading
     })}
     {...args}
   />
